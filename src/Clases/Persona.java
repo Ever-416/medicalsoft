@@ -1,6 +1,10 @@
 
 package Clases;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 
 public class Persona {
   private String nombre;
@@ -13,10 +17,19 @@ public class Persona {
     private String telefono;
     private String celular;
 
-    public Persona (String nom, String ape) {
-        this.nombre = nom;
-        this.apellido = ape;
+    public Persona() {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.identificacion = identificacion;
+        this.genero = genero;
+        this.direccion = direccion;
+        this.email = email;
+        this.telefono = telefono;
+        this.celular = celular;
     }
+
+    
 
     public String getNombre() {
         return nombre.toUpperCase();
@@ -88,6 +101,19 @@ public class Persona {
 
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+    
+    public int getedad() {
+     LocalDate hoy = LocalDate.now();
+     DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+     LocalDate fn = LocalDate.parse(this.fecha_nacimiento, fmt);
+     Period periodo = Period.between(fn, hoy);
+        return periodo.getYears();
+    }
+    
+    public String getFullnombre() {      
+      
+        return this.nombre+" "+this.apellido;
     }
     
 }
