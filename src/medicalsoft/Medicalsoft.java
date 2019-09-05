@@ -15,9 +15,11 @@ public class Medicalsoft {
         
         mec.setNombre("Omar");
         mec.setApellido("Marenco");
+   //     mec.setEmail("ejsalgadog@gmail.com");
         mec.setFecha_nacimiento("22-02-1981");
         
-         System.out.println("El medico es: "+mec.getFullnombre()+" y su edad es: "+mec.getedad());
+         System.out.println("El medico es: "+mec.getFullnombre()+" y su edad es: "+mec.getedad()+"\n"
+                 + "La direccion de correo es: "+mec.isEmail("ejsalgadog@ul.edu.co"));
     
     }
     

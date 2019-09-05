@@ -4,6 +4,8 @@ package Clases;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Persona {
@@ -114,6 +116,14 @@ public class Persona {
     public String getFullnombre() {      
       
         return this.nombre+" "+this.apellido;
+    }
+  
+    public boolean isEmail(String email){
+    String regex= "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
+        Pattern patron = Pattern.compile(regex); 
+        Matcher m = patron.matcher(email);
+        boolean validar = m.find();
+    return validar;
     }
     
 }
