@@ -1,8 +1,7 @@
 
 package medicalsoft;
 
-import Clases.Medico;
-import Clases.Persona;
+import Clases.*;
 import java.time.LocalDate;
 
 
@@ -12,14 +11,15 @@ public class Medicalsoft {
     public static void main(String[] args) {
         LocalDate hoy = LocalDate.now();
         Medico mec = new Medico ();
+        Validacion val = new Validacion();
         
         mec.setNombre("Omar");
         mec.setApellido("Marenco");
-   //     mec.setEmail("ejsalgadog@gmail.com");
+        mec.setEmail("ejsalgadog@gmail.com");
         mec.setFecha_nacimiento("22-02-1981");
         
          System.out.println("El medico es: "+mec.getFullnombre()+" y su edad es: "+mec.getedad()+"\n"
-                 + "La direccion de correo es: "+mec.isEmail("ejsalgadog@ul.edu.co"));
+                 + "La direccion de correo es: "+val.isEmail());
     
     }
     

@@ -31,7 +31,6 @@ public class Persona {
         this.celular = celular;
     }
 
-    
 
     public String getNombre() {
         return nombre.toUpperCase();
@@ -87,6 +86,7 @@ public class Persona {
 
     public void setEmail(String email) {
         this.email = email;
+        Validacion.em=email;
     }
 
     public String getTelefono() {
@@ -118,12 +118,6 @@ public class Persona {
         return this.nombre+" "+this.apellido;
     }
   
-    public boolean isEmail(String email){
-    String regex= "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
-        Pattern patron = Pattern.compile(regex); 
-        Matcher m = patron.matcher(email);
-        boolean validar = m.find();
-    return validar;
-    }
+    
     
 }
