@@ -86,7 +86,6 @@ public class Persona {
 
     public void setEmail(String email) {
         this.email = email;
-        Validacion.em=email;
     }
 
     public String getTelefono() {

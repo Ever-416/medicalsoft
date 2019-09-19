@@ -10,12 +10,28 @@ import java.util.regex.Pattern;
  */
 public class Validacion {
 
-static String em;  
-    public boolean isEmail(){
+    public static boolean isEmail(String email){
     String regex= "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$";
         Pattern patron = Pattern.compile(regex); 
-        Matcher m = patron.matcher(this.em);
+        Matcher m = patron.matcher(email);
         boolean validar = m.find();
     return validar;
     }
+    
+    public static boolean isCelular(String email){
+    String regex= "^3[0-9]{9,9}$";
+        Pattern patron = Pattern.compile(regex); 
+        Matcher m = patron.matcher(email);
+        boolean validar = m.find();
+    return validar;
+    }
+    
+    public static boolean isTelefono(String email){
+    String regex= "^3[0-9]{6,}$";
+        Pattern patron = Pattern.compile(regex); 
+        Matcher m = patron.matcher(email);
+        boolean validar = m.find();
+    return validar;
+    }
+    
 }
