@@ -6,5 +6,9 @@ public class Medico extends Persona{
     public Medico() {
         especialidad=especialidad;
     }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
     
 }
